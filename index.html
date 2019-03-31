@@ -258,19 +258,19 @@
     <!--added by luxu-->
 
 
-<article id="post-xv6代码学习3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-xv6代码学习1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/22/xv6代码学习3/">xv6代码学习(加载并运行内核)</a>
+      <a class="article-title" href="/2017/11/22/xv6代码学习1/">xv6代码学习</a>
     </h1>
   
 
         
-        <a href="/2017/11/22/xv6代码学习3/" class="archive-article-date">
+        <a href="/2017/11/22/xv6代码学习1/" class="archive-article-date">
   	<time datetime="2017-11-22T06:26:08.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
 </a>
         
@@ -278,10 +278,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>转载自<a href="http://leenjewel.github.io/blog/2015/05/26/%5B%28xue-xi-xv6%29%5D-jia-zai-bing-yun-xing-nei-he/" target="_blank" rel="noopener">leenjewel</a></p>
-<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h3 id="从硬盘读取数据"><a href="#从硬盘读取数据" class="headerlink" title="从硬盘读取数据"></a>从硬盘读取数据</h3><p>在<a href="http://leenjewel.github.io/blog/2014/07/29/%5B%28xue-xi-xv6%29%5D-cong-shi-mo-shi-dao-bao-hu-mo-shi/" target="_blank" rel="noopener">《【学习xv6】从实模式到保护模式》</a>中我们已经讲到了如何通过向 804x 键盘控制器端口发送信号来打开 A20 gate 了，同样道理，我们向硬盘控制器的指定端口发送信号就可以操作硬盘，从硬盘读取或向硬盘写入数据。IDE 标准定义了 8 个寄存器来操作硬盘。PC 体系结构将第一个硬盘控制器映射到端口 1F0-1F7 处，而第二个硬盘控制器则被映射到端口 170-177 处。这几个寄存器的描述如下（以第一个控制器为例）：</p>
+        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Mit6.828虽然用JOS来当作教学lab的系统，但是课件上主要介绍的却是Xv6系统(在X86系统上用ASNI标准C实现的Unix第六版)，并给出了完整的代码，这里整理下自己在学习xv6过程中用到的一些资料。</p>
         
-          <a class="article-more-a" href="/2017/11/22/xv6代码学习3/#more">more >></a>
+          <a class="article-more-a" href="/2017/11/22/xv6代码学习1/#more">more >></a>
         
       
 
@@ -316,7 +315,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/xv6代码学习3/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/xv6代码学习1/">展开全文 >></a>
         </p>
       
 
@@ -445,19 +444,19 @@
     <!--added by luxu-->
 
 
-<article id="post-xv6代码学习1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-xv6代码学习3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/22/xv6代码学习1/">xv6代码学习</a>
+      <a class="article-title" href="/2017/11/22/xv6代码学习3/">xv6代码学习(加载并运行内核)</a>
     </h1>
   
 
         
-        <a href="/2017/11/22/xv6代码学习1/" class="archive-article-date">
+        <a href="/2017/11/22/xv6代码学习3/" class="archive-article-date">
   	<time datetime="2017-11-22T06:26:08.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
 </a>
         
@@ -465,9 +464,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Mit6.828虽然用JOS来当作教学lab的系统，但是课件上主要介绍的却是Xv6系统(在X86系统上用ASNI标准C实现的Unix第六版)，并给出了完整的代码，这里整理下自己在学习xv6过程中用到的一些资料。</p>
+        <p>转载自<a href="http://leenjewel.github.io/blog/2015/05/26/%5B%28xue-xi-xv6%29%5D-jia-zai-bing-yun-xing-nei-he/" target="_blank" rel="noopener">leenjewel</a></p>
+<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h3 id="从硬盘读取数据"><a href="#从硬盘读取数据" class="headerlink" title="从硬盘读取数据"></a>从硬盘读取数据</h3><p>在<a href="http://leenjewel.github.io/blog/2014/07/29/%5B%28xue-xi-xv6%29%5D-cong-shi-mo-shi-dao-bao-hu-mo-shi/" target="_blank" rel="noopener">《【学习xv6】从实模式到保护模式》</a>中我们已经讲到了如何通过向 804x 键盘控制器端口发送信号来打开 A20 gate 了，同样道理，我们向硬盘控制器的指定端口发送信号就可以操作硬盘，从硬盘读取或向硬盘写入数据。IDE 标准定义了 8 个寄存器来操作硬盘。PC 体系结构将第一个硬盘控制器映射到端口 1F0-1F7 处，而第二个硬盘控制器则被映射到端口 170-177 处。这几个寄存器的描述如下（以第一个控制器为例）：</p>
         
-          <a class="article-more-a" href="/2017/11/22/xv6代码学习1/#more">more >></a>
+          <a class="article-more-a" href="/2017/11/22/xv6代码学习3/#more">more >></a>
         
       
 
@@ -502,7 +502,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/22/xv6代码学习1/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/22/xv6代码学习3/">展开全文 >></a>
         </p>
       
 
